@@ -1,4 +1,4 @@
-# 开始
+# 安装配置说明
 
 ### 创建虚拟环境
 ```bash
@@ -6,7 +6,7 @@ conda create -n SparseDrive-v python=3.8 -y
 conda activate sparsedrive-v
 ```
 
-### 安装包
+### 安装
 ```bash
 cd ${sparsedrive-v_path}
 pip install --upgrade pip
@@ -28,7 +28,7 @@ cd ../../../
 ```
 
 ### 准备数据集
-下载 [NuScenes dataset](https://www.nuscenes.org/nuscenes#download) 1.0 数据集，下载 CAN bus expansion，创建软链接，以帮助你访问本地nuscenes数据.
+下载 [NuScenes dataset](https://www.nuscenes.org/nuscenes#download) 1.0 数据集，再下载 CAN bus expansion，完成后创建软链接，帮助你访问本地nuscenes数据.
 ```bash
 cd ${sparsedrive-v_path}
 mkdir data
@@ -37,7 +37,7 @@ or
 mklink ./data/nuscenes path/to/nuscenes
 ```
 
-在 data_converter 中生成map_annos，默认roi_size为 （30， 60），可以在  tools/data_converter/nuscenes_converter.py 文件中修改roi_size.
+使用nuscenes_converter.py生成map_annos，默认roi_size为 （30， 60），可以在  tools/data_converter/nuscenes_converter.py文件中修改roi_size.
 ```bash
 cd ${sparsedrive-v_path}
 
@@ -48,7 +48,7 @@ or
 python tools/data_converter/nuscenes_converter.py nuscenes --root-path ./data/nuscenes --canbus ./data/nuscenes --out-dir ./data/infos/ --extra-tag nuscenes --version v1.0-mini
 ```
 
-### Generate anchors
+### 生成几何锚点
 ```bash
 cd ${sparsedrive-v_path}
 python tools/kmeans/kmeans_det.py
@@ -63,7 +63,12 @@ python tools/kmeans/kmeans_plan.py
 ```bash
 cd ${sparsedrive-v_path}
 mkdir ckpt
+
 wget https://download.pytorch.org/models/resnet50-19c8e357.pth -O ckpt/resnet50-19c8e357.pth
+
+wget https://github.com/swc-17/SparseDrive/releases/download/v1.0/sparsedrive_stage1.pth
+
+wget https://github.com/swc-17/SparseDrive/releases/download/v1.0/sparsedrive_stage2.pth
 ```
 
 ### 训练
