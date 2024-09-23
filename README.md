@@ -18,6 +18,8 @@
     padding: 2px;"></div>
 </center>
  
+[视频](demo/bev_gt.mp4)
+
 ### - 直行： 
 <center>
     <img style="border-radius: 0.3125em;
