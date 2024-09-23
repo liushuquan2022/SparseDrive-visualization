@@ -99,6 +99,44 @@
 ## 开始
 [环境安装及数据准备](install.md)
 
+### 测试
+#### - 目标检测
+```bash
+python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval bbox
+python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval segm
+```
+#### - 运动预测+路径规划
+```bash
+python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox
+python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval segm
+```
+#### - 目标检测+运动预测+路径规划+可视化
+```bash
+python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox --visual
+python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval segm --visual
+```
+#### - 分析
+```bash
+python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval bbox --analysis
+python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval segm --analysis
+
+python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox --analysis
+python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval segm --analysis
+```
+#### - 只输出验证结果
+```bash
+python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval bbox --result_file ./work_dirs/results.pkl
+
+python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox --result_file ./work_dirs/results.pkl
+```
+
+### 单独可视化显示检测结果
+```bash
+python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_stage1.py --result-path ./work_dirs/results.pkl
+
+python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_stage2.py --result-path ./work_dirs/results.pkl
+```
+
 ## 引用
 如果您发现 SparseDrive-v 对您的研究或应用有用，在下面的 BibTeX 条目中引用它。
 ```

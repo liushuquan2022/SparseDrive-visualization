@@ -57,9 +57,7 @@ python tools/kmeans/kmeans_motion.py
 python tools/kmeans/kmeans_plan.py
 ```
 
-
 ### 下载weights
-按如下说明下载
 ```bash
 cd ${sparsedrive-v_path}
 mkdir ckpt
@@ -78,35 +76,37 @@ python ./tools/train.py  projects/configs/sparsedrive_small_stage2.py --determin
 ```
 
 ### 测试
+#### - 目标检测
 ```bash
-# 检测
 python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval bbox
 python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval segm
-
-# 规划
+```
+#### - 运动预测+路径规划
+```bash
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval segm
-
-#检测+规划+可视化
+```
+#### - 目标检测+运动预测+路径规划+可视化
+```bash
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox --visual
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval segm --visual
-
-#性能分析
+```
+#### - 分析
+```bash
 python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval bbox --analysis
 python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval segm --analysis
 
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox --analysis
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval segm --analysis
-
-#只输出检测结果
+```
+#### - 只输出验证结果
+```bash
 python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsedrive_stage1.pth --deterministic --eval bbox --result_file ./work_dirs/results.pkl
 
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox --result_file ./work_dirs/results.pkl
 ```
-
-### 独立可视化检测结果
-
-```
+### 单独可视化显示检测结果
+```bash
 python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_stage1.py --result-path ./work_dirs/results.pkl
 
 python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_stage2.py --result-path ./work_dirs/results.pkl
