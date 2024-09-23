@@ -6,7 +6,7 @@
 > SparseDrive 由对称稀疏感知模块和并行运动规划器组成，是一种以 Sparse 为中心的端到端自动驾驶范例。SparseDrive利用解耦的实例特征和几何锚点作为一个实例（动态道路智能体或静态地图元素）的完整表示，对称稀疏感知将检测、跟踪和在线地图任务与对称模型架构统一起来，实现完全稀疏的场景表示。在并行运动规划器中，首先从自我实例初始化模块获得语义和几何感知的自我实例。利用来自稀疏感知的自我实例和周围智能体实例，同时进行运动预测和规划，以获得所有道路智能体的多模态轨迹。为了确保规划的合理性和安全性，采用了结合碰撞感知重新评分模块的分层规划选择策略，从多模态轨迹提案中选择最终的安全规划轨迹。详情请参见作者的论文：[arXiv](https://arxiv.org/abs/2405.19620). 本文的主要贡献：
 - 在 SparseDrive 项目基础上实现了目标检测、运动预测、路径规划、轨迹预测、可视化输出的一体化集成.
 - 单GPU、小内存性能优化.
-- 多视角观察可视化输出，图形文字的中文显示.
+- BEV多视角可视化输出，中文显示.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -19,9 +19,9 @@
     padding: 2px;"></div>
 </center>
  
-[下载 验证视频](demo/combine_gt.mp4)
+[下载 演示视频](demo/combine_gt.mp4)
 
-### - 直行： 
+### - 直行（直道行驶）： 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -33,7 +33,7 @@
     padding: 2px;"></div>
 </center>
 
-### - 左转： 
+### - 左转（弯道行驶）： 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -45,7 +45,7 @@
     padding: 2px;"></div>
 </center>
 
-### - 路口： 
+### - 路口（路口通行）： 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -57,7 +57,7 @@
     padding: 2px;"></div>
 </center>
 
-### - 右转： 
+### - 右转（弯道行驶）： 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -69,7 +69,7 @@
     padding: 2px;"></div>
 </center>
 
-### - 左转： 
+### - 左转（弯道行驶）： 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
