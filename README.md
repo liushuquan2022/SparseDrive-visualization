@@ -20,6 +20,7 @@
 </center>
  
 [下载 演示视频](demo/combine_gt.mp4)
+![combine_gt](demo/combine_gt.gif)
 
 ### - 直行（直道行驶）： 
 <center>
@@ -138,7 +139,7 @@ python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_sta
 ```
 
 ## 引用
-如果您发现 SparseDrive-v 对您的研究有用，在下面的 BibTeX 条目中引用它。
+如果您发现 SparseDrive-v 对您的研究或应用有用，在下面的 BibTeX 条目中引用它。
 ```
 @article{liu518 2024sparsedrive,
   title={SparseDrive: End-to-End Autonomous Driving via Sparse Scene Representation},
@@ -147,9 +148,8 @@ python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_sta
 }
 ```
 
-## 本文参考如下项目，在此感谢:
-- [BevDet](https://github.com/HuangJunJie2017/BEVDet)
+## 本文参考如下项目，在此感谢
 - [SparseDrive](https://github.com/swc-17/SparseDrive)
-- [SurroundDepth](https://github.com/weiyithu/SurroundDepth)
-- [OpenOccupancy](https://github.com/weiyithu/JeffWang987/OpenOccupancy)
+- [VAD](https://github.com/hustvl/VAD)
+- [mmdet3d](https://github.com/open-mmlab/mmdetection3d)
 
