@@ -18,7 +18,7 @@
     padding: 2px;"></div>
 </center>
  
-[视频](demo/bev_gt.mp4)
+[下载视频](demo/combine_gt.mp4)
 
 ### - 直行： 
 <center>
