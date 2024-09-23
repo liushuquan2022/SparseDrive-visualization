@@ -203,8 +203,8 @@ def main():
 
     visualizer_main = Visualizer(vis_args, plot_choices, None)
     START = 0
-    END = 200
-    #END = len(visualizer_main.results)
+    #END = 380
+    END = len(visualizer_main.results)
     for idx in tqdm(range(START, END, INTERVAL)):
         if idx >= END:
             break
