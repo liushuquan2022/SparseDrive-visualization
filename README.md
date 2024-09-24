@@ -130,7 +130,6 @@ python ./tools/test.py projects/configs/sparsedrive_small_stage1.py ckpt/sparsed
 
 python ./tools/test.py projects/configs/sparsedrive_small_stage2.py ckpt/sparsedrive_stage2.pth --deterministic --eval bbox --result_file ./work_dirs/results.pkl
 ```
-
 ### 单独可视化显示检测结果
 ```bash
 python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_stage1.py --result-path ./work_dirs/results.pkl
@@ -149,7 +148,8 @@ python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_sta
 ```
 
 ## 本文参考如下项目，在此感谢
+- [BevDet](https://github.com/HuangJunJie2017/BEVDet)
 - [SparseDrive](https://github.com/swc-17/SparseDrive)
-- [VAD](https://github.com/hustvl/VAD)
-- [mmdet3d](https://github.com/open-mmlab/mmdetection3d)
+- [OpenOccupancy](https://github.com/JeffWang987/OpenOccupancy)
+- [SurroundDepth](https://github.com/weiyithu/SurroundDepth)
 
