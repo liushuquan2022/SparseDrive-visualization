@@ -69,6 +69,13 @@ def parse_args():
     parser.add_argument("--visual", action="store_true", help="visual results")
     parser.add_argument("--show", action="store_true", help="show results")
     parser.add_argument("--show_dir", help="directory where results will be saved")
+    parser.add_argument(
+        "--show_type",
+        nargs="+",
+        action=DictAction,
+        default=['combine_gt'],
+        help="['cam_pred', 'bev_pred', 'bev_gt', 'combine_pred', 'combine_gt']",
+    )
 
     parser.add_argument(
         "--gpu-collect",
@@ -168,8 +175,9 @@ def visual_results(model, data_loader, work_dir, args):
             visualizer_show.results = result
 
         visualizer_show.add_vis(0)
-        for v_type in video_type:
-            visualizer_show.show_video(v_type)
+        for v_type in args.show_type:
+            if v_type in video_type:
+                visualizer_show.show_video(v_type)
 
         for _ in range(batch_size):
             prog_bar.update()
