@@ -148,11 +148,13 @@ def visualizer_show_window(result, vis_args):
         visualizer_show.show_video(v_type)
 
 def visualizer_save_video(out_dir, fps=12, downsample=4):
-    for idx in tqdm(range(0, len(video_type)-1, INTERVAL)):
+    for idx in tqdm(range(0, len(video_type), INTERVAL)):
         v_type = video_type[idx]
         video_dir = os.path.join(out_dir, v_type)
         imgs_path = glob.glob(os.path.join(video_dir, '*.jpg'))
         video_filename = v_type + '.mp4'
+        if len(imgs_path)==0:
+            continue
 
         imgs_path = sorted(imgs_path)
         out = None
@@ -206,7 +208,7 @@ def main():
     #END = 380
     END = len(visualizer_main.results)
     for idx in tqdm(range(START, END, INTERVAL)):
-        if idx >= END:
+        if idx > END:
             break
         visualizer_main.add_vis(idx)
 
