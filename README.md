@@ -140,8 +140,8 @@ python ./tools/visualization/visualize.py projects/configs/sparsedrive_small_sta
 ## 引用
 如果您发现 SparseDrive-v 对您的研究或应用有用，在下面的 BibTeX 条目中引用它。
 ```
-@article{liu518 2024sparsedrive,
-  title={SparseDrive: End-to-End Autonomous Driving via Sparse Scene Representation},
+@article{liu518 2024 SparseDrive-v,
+  title={SparseDrive-v: End-to-End Autonomous Driving via Sparse Scene Representation},
   author={liushuquan},
   year={2024}
 }
